@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Changer and Click Counter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Color Changer and Click Counter</h1>
+  <div class="button-container">
+    <button id="redBtn">Red</button>
+    <button id="blueBtn">Blue</button>
+    <button id="greenBtn">Green</button>
+  </div>
+  <div class="counter-container">
+    <p>Red Clicks: <span id="redCount">0</span></p>
+    <p>Blue Clicks: <span id="blueCount">0</span></p>
+    <p>Green Clicks: <span id="greenCount">0</span></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.5s;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+button {
+  font-size: 1.2em;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.counter-container {
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+let redCount = 0;
+let blueCount = 0;
+let greenCount = 0;
+
+document.getElementById('redBtn').addEventListener('click', () => {
+  document.body.style.backgroundColor = 'red';
+  document.getElementById('redCount').innerText = ++redCount;
+});
+
+document.getElementById('blueBtn').addEventListener('click', () => {
+  document.body.style.backgroundColor = 'blue';
+  document.getElementById('blueCount').innerText = ++blueCount;
+});
+
+document.getElementById('greenBtn').addEventListener('click', () => {
+  document.body.style.backgroundColor = 'green';
+  document.getElementById('greenCount').innerText = ++greenCount;
+});
